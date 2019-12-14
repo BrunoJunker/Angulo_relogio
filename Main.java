@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class Main {
@@ -15,16 +16,16 @@ public class Main {
 
         if (hora > 12 || minuto > 59) {
             System.out.println("Entrada invalida!");
+            
             return;
         }
 
         int posicaoMinuto = obterPosicaoMinuto(minuto);
         int posicaoHora = obterPosicaoHora(hora);
 
-        int diferenca = objterDiferenca(posicaoMinuto, posicaoHora);
+        int diferenca = obterDiferenca(posicaoMinuto, posicaoHora);
 
         System.out.println("A diferenca dos angulo entre os 2 ponteiros do relogio = " + diferenca + " graus");
-
     }
 
     public static int obterPosicaoMinuto(int minutos) {
@@ -38,7 +39,7 @@ public class Main {
         return horas == 12 ? 0 : horas * (360 / 12);
     }
 
-    private static int objterDiferenca(int posicaoMinuto, int posicaoHora) {
+    private static int obterDiferenca(int posicaoMinuto, int posicaoHora) {
         int diferenca = 0;
         // verifica qual é o maior grau, para fazer a subtracao nao dar negativa
         if (posicaoHora > posicaoMinuto) {
@@ -48,5 +49,7 @@ public class Main {
         }
         return diferenca;
     }
+    
 
 }
+
